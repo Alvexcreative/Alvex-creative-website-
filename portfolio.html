@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <title>Leicestershire Web Design Portfolio | Alvex Creative</title>
+  <meta name="description" content="A look at the work coming out of Alvex Creative — modern websites for Leicestershire's tradespeople, salons, barbers and local shops. Client projects coming soon." />
+  <meta name="keywords" content="Web Design Portfolio Leicestershire, Website Design Leicestershire, Local Business Web Design, Small Business Websites Leicestershire" />
+  <link rel="canonical" href="https://www.alvexcreative.com/portfolio.html" />
+  <meta name="theme-color" content="#070a14" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.alvexcreative.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alvex Creative web design in Leicestershire" />
+  <meta name="twitter:image:alt" content="Alvex Creative web design in Leicestershire" />
+  <meta name="twitter:image" content="https://www.alvexcreative.com/assets/og-image.jpg" />
+  <meta property="og:title" content="Leicestershire Web Design Portfolio — Alvex Creative" />
+  <meta property="og:description" content="Modern websites for Leicestershire's local businesses. Client projects coming soon." />
+  <meta property="og:url" content="https://www.alvexcreative.com/portfolio.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preload" as="image" href="assets/pages-bg.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Analytics (GA4): paste your Measurement ID over G-XXXXXXXXXX to activate. No network requests are made until it is set. -->
+  <script>
+    (function () {
+      var GA_ID = 'G-XXXXXXXXXX';
+      if (GA_ID.indexOf('XXXX') !== -1) return; // not configured yet
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Alvex Creative home"><img class="logo__img" src="assets/logo.svg" alt="Alvex Creative" width="98" height="30" /></a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn nav__cta" href="contact.html">Book a Free Consultation</a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="index.html"><span>Home</span><span class="idx">01</span></a>
+      <a href="services.html"><span>Services</span><span class="idx">02</span></a>
+      <a href="portfolio.html"><span>Portfolio</span><span class="idx">03</span></a>
+      <a href="about.html"><span>About</span><span class="idx">04</span></a>
+      <a href="contact.html"><span>Contact</span><span class="idx">05</span></a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--light" href="contact.html">Book a Free Consultation</a>
+      <a class="btn btn--on-dark-ghost" href="contact.html">Get a Free Website Review</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" style="padding-bottom:clamp(3rem,2rem+4vw,5rem);">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <span class="eyebrow" data-reveal>Our Work</span>
+        <h1 data-reveal data-reveal-delay="1" style="max-width:18ch;">Great work, on the way</h1>
+        <p class="lead" data-reveal data-reveal-delay="2">Alvex Creative is a new agency, and we're being deliberate about who we work with first. This is where our client projects will live — and we're inviting a small number of local businesses to be the first featured here.</p>
+        <div class="btn-row" data-reveal data-reveal-delay="3">
+          <a class="btn btn--lg" href="contact.html">Become a Featured Project</a>
+          <a class="btn btn--ghost btn--lg" href="contact.html">Get a Free Website Review</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMING SOON GRID -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Coming soon</span>
+          <h2 class="mt-sm">Client projects coming soon</h2>
+          <p>Each slot below is reserved for a real local business. As projects launch, this gallery fills with live websites, the results they delivered, and the story behind each build.</p>
+        </div>
+
+        <!-- ===================================================================
+             PORTFOLIO ITEM TEMPLATE — to add a real project later, replace one
+             placeholder block with the structure below and drop in a screenshot:
+
+             <a class="work-card" href="https://client-site.co.uk" target="_blank" rel="noopener"
+                style="aspect-ratio:4/3;background:#fff;">
+               <img src="assets/work/CLIENT.webp" alt="Homepage of CLIENT — Web Design"
+                    loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+               <div class="work-card__body">
+                 <span class="work-card__tag"><span class="pulse"></span>Industry</span>
+                 <h3>Client Name</h3>
+                 <p>One line on the result — e.g. "3× more enquiries in the first month."</p>
+               </div>
+             </a>
+             ==================================================================== -->
+
+        <div class="portfolio-grid">
+          <article class="work-card" data-reveal>
+            <div class="work-card__placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+            <div class="work-card__body"><span class="work-card__tag"><span class="pulse" aria-hidden="true"></span>Tradespeople</span><h3>Project One</h3><p>Reserved — a modern site built to bring in more job enquiries.</p></div>
+          </article>
+          <article class="work-card" data-reveal data-reveal-delay="1">
+            <div class="work-card__placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div class="work-card__body"><span class="work-card__tag"><span class="pulse" aria-hidden="true"></span>Hair Salon</span><h3>Project Two</h3><p>Reserved — a stylish site designed to fill the booking diary.</p></div>
+          </article>
+          <article class="work-card" data-reveal>
+            <div class="work-card__placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+            <div class="work-card__body"><span class="work-card__tag"><span class="pulse" aria-hidden="true"></span>Barber</span><h3>Project Three</h3><p>Reserved — a sharp, mobile-first site with easy click-to-call.</p></div>
+          </article>
+          <article class="work-card" data-reveal data-reveal-delay="1">
+            <div class="work-card__placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 11H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+            <div class="work-card__body"><span class="work-card__tag"><span class="pulse" aria-hidden="true"></span>Independent Shop</span><h3>Project Four</h3><p>Reserved — a credible storefront that competes with the big names.</p></div>
+          </article>
+        </div>
+
+        <div class="center mt-lg" data-reveal>
+          <span class="placeholder-note" aria-hidden="true">New projects added as they launch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE'LL SHOWCASE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">What you'll see here</span>
+          <h2 class="mt-sm">More than pretty screenshots</h2>
+          <p>When our case studies go live, each one will show the thinking and the outcome — not just the design.</p>
+        </div>
+        <div class="card-grid card-grid--3">
+          <div class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 4-6"/></svg></div>
+            <h3>The results</h3>
+            <p>Real numbers where we have them — more enquiries, more calls, more bookings and better visibility on Google.</p>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="1">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1z"/></svg></div>
+            <h3>The challenge</h3>
+            <p>What the business needed, who they serve, and the problem the old site (or no site) was causing.</p>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="2">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>The approach</h3>
+            <p>How we designed, built and optimised the site to turn visitors into customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BE FIRST CTA -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <div class="cta__grid-bg" aria-hidden="true"></div>
+          <span class="eyebrow" style="justify-content:center;">Limited spots</span>
+          <h2 class="mt-sm">Want to be our first featured project?</h2>
+          <p>We're working with a select group of local businesses to build standout websites — with extra care, honest pricing and a results story we'll be proud to show off. Yours could be first.</p>
+          <div class="btn-row">
+            <a class="btn btn--light btn--lg" href="contact.html">Book a Free Consultation</a>
+            <a class="btn btn--on-dark-ghost btn--lg" href="contact.html">Get a Free Website Review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo" href="index.html" aria-label="Alvex Creative home"><img class="logo__img" src="assets/logo.svg" alt="Alvex Creative" width="98" height="30" /></a>
+          <p>Modern websites for Leicestershire's local businesses — built to win more customers and look the part. Websites that work as hard as you do.</p>
+        </div>
+        <div class="footer__col"><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4>Services</h4><ul><li><a href="services.html#design">Website Design</a></li><li><a href="services.html#development">Development</a></li><li><a href="services.html#seo">SEO Foundations</a></li><li><a href="services.html#hosting">Hosting &amp; Maintenance</a></li><li><a href="services.html#leads">Lead Generation</a></li></ul></div>
+        <div class="footer__col footer__cta"><h4>Get started</h4><p>Two free ways to begin — no obligation.</p><a class="btn btn--light" href="contact.html">Book a Free Consultation</a><a class="btn btn--on-dark-ghost" href="contact.html">Get a Free Website Review</a></div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Alvex Creative · Web Design in Leicestershire</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Alvex Creative on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" aria-label="Alvex Creative on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></svg></a>
+          <a href="#" aria-label="Alvex Creative on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
