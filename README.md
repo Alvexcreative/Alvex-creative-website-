@@ -1,162 +1,154 @@
 # Alvex Creative — Website
 
-A production-ready, mobile-first marketing website for **Alvex Creative**, a web design agency for local businesses.
-Built with semantic HTML, modern CSS and vanilla JavaScript — no build step, no dependencies.
+Marketing website for **Alvex Creative**, a Leicestershire web design agency helping local
+businesses win more customers online. Built as a fast, mobile-first **static site** — semantic
+HTML, one CSS file, and a little vanilla JavaScript. No framework, no build step, no dependencies.
 
 > **Tagline:** *Websites That Work As Hard As You Do*
+> **Live domain:** alvexcreative.com · **Repo:** github.com/Alvexcreative/Alvex-creative-website-
 
 ---
 
-## 1. File structure
+## Tech stack
+
+- **HTML** — five hand-written, semantic pages
+- **CSS** — a single design-system stylesheet (`css/styles.css`), CSS custom properties, no preprocessor
+- **JavaScript** — one vanilla file (`js/main.js`): sticky nav, mobile menu, scroll reveals, FAQ accordion, AJAX contact form
+- **Fonts** — Google Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (labels)
+- **Forms** — [Formspree](https://formspree.io) (no backend needed)
+
+---
+
+## Project structure
 
 ```
-Alvex Creative/
+.
 ├── index.html          # Home
 ├── services.html       # Services (Design, Dev, SEO, Hosting, Lead Gen)
 ├── portfolio.html      # Portfolio — "coming soon", built to expand
 ├── about.html          # Story, mission, values
-├── contact.html        # Free-consultation form (Formspree)
+├── contact.html        # Consultation form (Formspree)
+├── 404.html            # Custom not-found page (noindex)
 ├── css/
-│   └── styles.css      # Single design-system stylesheet (all pages)
+│   └── styles.css      # Whole design system — shared by every page
 ├── js/
-│   └── main.js         # Nav, mobile menu, scroll reveal, FAQ, form
+│   └── main.js         # Nav, mobile menu, scroll reveal, FAQ, contact form
+├── assets/
+│   ├── logo.svg        # Brand lockup (gradient "A" + wordmark)
+│   ├── og-image.jpg    # 1200×630 social share image
+│   ├── landing-bg.jpg  # Home hero background
+│   └── pages-bg.jpg    # Inner-page background
 ├── robots.txt
-├── sitemap.xml
-└── README.md
+└── sitemap.xml
 ```
-
-Open `index.html` directly in a browser, or serve the folder with any static host.
 
 ---
 
-## 2. Design system
+## Run it locally
+
+It's a static site, so either:
+
+```bash
+# Option 1 — just open it
+open index.html            # (or double-click the file)
+
+# Option 2 — serve it (nicer; lets the JS fetch work as in production)
+python -m http.server 5510
+# then visit http://localhost:5510
+```
+
+---
+
+## Design
+
+A **dark, holographic glassmorphism** theme.
 
 | Token | Value | Use |
 |-------|-------|-----|
-| Ink | `#0a0a0a` | Primary text, buttons, dark sections |
-| Off-white | `#f6f5f2` | Alternating section backgrounds |
-| Greys | `#5f5f5c` → `#e7e5e0` | Body text, borders, muted text |
-| Display font | **Space Grotesk** | Headlines |
-| Body font | **Inter** | Paragraphs, UI |
+| Base | `#070a14` | Page background (space-indigo) |
+| Gradient | `#22D3EE → #6366F1 → #A855F7 → #EC4899` | Accents, buttons, logo, glass-card glow |
+| Text | `#E9EDF8` / muted `#9AA2BD` | Body / secondary text |
+| Display | **Space Grotesk** (uppercase titles) | Headlines |
+| Body | **Inter** | Paragraphs, UI |
+| Mono | **JetBrains Mono** | `// LABEL` eyebrows, tags, data |
 
-Strictly monochrome — contrast and typography carry the hierarchy. Generous whitespace,
-subtle hover lifts, IntersectionObserver scroll-reveals, a sticky blur nav that hides on scroll-down,
-a full-screen mobile menu and an accessible FAQ accordion. All motion respects `prefers-reduced-motion`.
-
-To re-theme, edit the CSS custom properties in the `:root` block of `css/styles.css`.
-
----
-
-## 3. Logo
-
-The navigation and footer use a **placeholder logo** — a black `A` mark plus the "Alvex Creative" wordmark.
-When the final logo arrives:
-
-- **SVG/PNG:** replace `<span class="logo__mark">A</span>` with
-  `<img src="assets/logo.svg" alt="Alvex Creative" width="140" height="36">` in each page's nav and footer,
-  and remove the `.logo__text`.
-- Add a `favicon.ico` / `apple-touch-icon.png` to the root and link them in each `<head>`.
-
-There are 5 nav blocks and 5 footer blocks (one per page) — update all for consistency.
+Signature touches: an aurora gradient backdrop, glass cards with a gradient hairline that lights up on
+hover, a floating glass nav pill inside a full-width frosted band, a looping image background that's sharp
+in the hero and blurs below the fold, and per-section blur variation. All motion respects
+`prefers-reduced-motion`. To re-theme, edit the custom properties in the `:root` block of `css/styles.css`.
 
 ---
 
-## 4. Formspree integration (contact form)
+## Contact form (Formspree)
 
-The contact form posts via AJAX so visitors stay on the page and see inline success/error messages.
+The form submits via AJAX (visitors stay on the page and get inline success/error messages). It is
+**connected and live** — endpoint `https://formspree.io/f/mrewgdbj`, sending to
+`enquiries@alvexcreative.com`.
 
-**To go live:**
-
-1. Create a free form at <https://formspree.io>.
-2. Copy your endpoint (e.g. `https://formspree.io/f/abcdwxyz`).
-3. In `contact.html`, replace the placeholder in the form's `action`:
-   ```html
-   <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-   ```
-   with your real ID. Until you do, the form shows a friendly "not yet connected" notice instead of failing silently.
-
-**Included already:**
-- Fields: Name, Business name, Email, Phone, Project description (matches the brief).
-- A hidden `_subject` line so enquiries are easy to spot in your inbox.
-- A `_gotcha` honeypot field for spam protection.
-- Labelled, `autocomplete`-enabled inputs and an `aria-live` status region for accessibility.
-
-Email is set to `enquiries@alvexcreative.com` and phone to `07956 920810` (`+44 7956 920810` in JSON-LD,
-`tel:+447956920810` for click-to-call). Keep these identical on the Google Business Profile and any directories.
+Included: Name, Business name, Email, Phone, Project description · a hidden `_subject` line · a `_gotcha`
+honeypot for spam · labelled, `autocomplete`-enabled inputs · an `aria-live` status region.
 
 ---
 
-## 5. SEO — what's done & next steps
+## SEO
 
-**Already implemented**
-- Unique `<title>` + meta description per page, targeting local keywords.
-- Canonical URLs, Open Graph / Twitter tags, `theme-color`.
-- Semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), one `<h1>` per page, logical heading order.
-- `ProfessionalService` + `ContactPage` JSON-LD structured data.
-- `robots.txt` and `sitemap.xml`.
-- Keywords woven naturally into copy and headings: *Web Design Agency, Small Business Websites,
-  Local Business Web Design, Website Development, SEO Services, Lead Generation.* (Add a town/region back in
-  if you later decide to target a specific location.)
-- Fast by default: no frameworks, system-friendly fonts with `preconnect`, transform/opacity-only animations.
+Targeted at **local search in Leicestershire**. Implemented:
 
-**Before / after launch**
-1. Domain is set to `https://www.alvexcreative.com/` (canonicals, OG, sitemap, robots, JSON-LD). Make sure both `www` and apex resolve via a host redirect.
-2. Add a real `og:image` (1200×630) and reference it in each `<head>`.
-3. Create & verify a **Google Business Profile** — the single biggest local-SEO lever; keep NAP (name, address, phone) identical to the site.
-4. Submit `sitemap.xml` in **Google Search Console**; set up **Bing Webmaster Tools** too.
-5. Add the business to consistent local directories (Yell, Bing Places, FreeIndex, etc.) with matching NAP.
-6. Compress and serve images as **WebP** with `loading="lazy"` (the portfolio template already does this).
-7. Consider a `/blog` with intent-driven posts (e.g. "How much should a tradesperson's website cost?").
+- Unique `<title>` + meta description + keywords per page (Leicestershire-focused)
+- Canonical URLs · Open Graph + Twitter tags · `og:image` (1200×630) with dimensions/alt · `theme-color`
+- `robots` meta (`max-image-preview:large`) · SVG favicon
+- Structured data: `ProfessionalService` (LocalBusiness-style, area served = Leicestershire) + `FAQPage` + `WebSite`
+- `robots.txt` + `sitemap.xml`
+- Semantic landmarks, one `<h1>` per page, logical heading order
+- Fast by default: compressed images, hero-image `preload`, `preconnect` fonts, transform/opacity-only motion
+
+A guarded **GA4** snippet sits in every `<head>` — paste your Measurement ID over `G-XXXXXXXXXX` to
+activate (it makes no network requests until you do).
 
 ---
 
-## 6. Portfolio expansion strategy
+## Deploying
 
-The portfolio page is built to grow with zero redesign.
+Any static host works (Netlify, Vercel, Cloudflare Pages, traditional shared hosting). Because the code
+already lives on GitHub, the easiest free route is **GitHub Pages**:
 
-**To add a real project**, replace one `.work-card` placeholder in `portfolio.html` with the template that's
-commented at the top of the portfolio grid:
+1. **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
+2. Add **alvexcreative.com** as the custom domain and set the DNS records at your registrar.
+3. GitHub provisions free HTTPS.
 
-```html
-<a class="work-card" href="https://client-site.co.uk" target="_blank" rel="noopener"
-   style="aspect-ratio:4/3;background:#fff;">
-  <img src="assets/work/client.webp" alt="Homepage of Client — Web Design"
-       loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-  <div class="work-card__body">
-    <span class="work-card__tag"><span class="pulse"></span>Industry</span>
-    <h3>Client Name</h3>
-    <p>One-line result — e.g. "3× more enquiries in the first month."</p>
-  </div>
-</a>
-```
-
-**Recommended growth path**
-1. **Capture results from day one** — screenshot the old site, agree a simple metric (calls, bookings, form fills) and record the before/after. Results sell far better than screenshots.
-2. **Add case-study sub-pages** later (`portfolio/client-name.html`) using the existing section/`split` components: Challenge → Approach → Result. The "What you'll see here" section already previews this structure.
-3. **Collect a testimonial** at the same time and swap it into the reserved quote cards on the home page (`#testimonials`).
-4. **Keep the grid balanced** — 2 or 4 live cards read best; retire placeholders as real work lands.
-5. When you have 6+ projects, add simple filter chips (Trades / Salons / Shops) above the grid.
+> After launch: ensure both `www` and the apex resolve, verify the site in **Google Search Console** and
+> submit `sitemap.xml`, and finish the **Google Business Profile** (keep name/phone identical to the site).
 
 ---
 
-## 7. Accessibility & performance checklist
+## Status
 
-- ✅ Skip-to-content link, visible focus states, keyboard-operable nav, menu and FAQ.
-- ✅ Labelled form inputs, `aria-live` status, icon-only buttons have `aria-label`.
-- ✅ Decorative SVGs marked `aria-hidden`; meaningful images get descriptive `alt`.
-- ✅ 4.5:1+ contrast throughout the monochrome palette.
-- ✅ `prefers-reduced-motion` disables reveals, marquee and hover transforms.
-- ✅ Responsive at 375 / 768 / 1024 / 1440px; no horizontal scroll; 16px+ body text.
+**Done** — design, copy, mobile-responsive layout, Leicestershire SEO + structured data, real logo,
+domain/email/phone, live Formspree form, favicon, og-image, 404 page.
+
+**Remaining**
+- [ ] Go live: point `alvexcreative.com` at hosting (GitHub Pages is an option) + DNS
+- [ ] Paste real **GA4** Measurement ID to switch analytics on
+- [ ] Real **footer social links** (then add `sameAs` to the schema)
+- [ ] Finish **Google Business Profile** (created, awaiting approval) + Search Console
+- [ ] Add real **portfolio projects** + **testimonials** (templates are ready)
+- [ ] Optional: a `/blog` for ongoing content SEO
 
 ---
 
-## 8. Quick launch checklist
+## Adding a portfolio project
 
-- [ ] Drop in final logo + favicons (5 nav + 5 footer blocks)
-- [ ] Connect Formspree endpoint in `contact.html`
-- [ ] Add real email, phone and (optional) address everywhere
-- [ ] Swap placeholder domain for the real one (URLs, canonicals, OG, sitemap, robots, JSON-LD)
-- [ ] Add `og:image`
-- [ ] Set up Google Business Profile + Search Console, submit sitemap
-- [ ] Hook up real social links in the footer
-```
+The portfolio grid is built to expand with no redesign — replace one `.work-card` placeholder in
+`portfolio.html` with the template commented at the top of that file (a linked card with a screenshot,
+industry tag, client name and one-line result). Collect a testimonial at the same time and drop it into the
+reserved quote cards on the home page (`#testimonials`).
+
+---
+
+## Accessibility
+
+- Skip-to-content link, visible focus states, keyboard-operable nav, menu and FAQ
+- Labelled form inputs, `aria-live` status, `aria-label` on icon-only buttons
+- Decorative SVGs marked `aria-hidden`; meaningful images have descriptive `alt`
+- `prefers-reduced-motion` respected (the decorative marquee is the one intentional exception)
+- Responsive with no horizontal scroll; 16px+ body text on mobile
