@@ -392,6 +392,8 @@ body.menu-open .mobile-menu__links a:nth-child(5){animation-delay:.32s}
   /* Stats: drop the dark clouded box entirely on phones — the four cards sit
      on the page background. */
   .stats-band { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; padding-block: 0; }
+  /* Start the frosted services section just below the stats, not flush to it */
+  #services { margin-top: 28px; }
 }
 
 /* Marquee */
