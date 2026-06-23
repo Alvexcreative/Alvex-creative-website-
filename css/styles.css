@@ -385,6 +385,8 @@ body.menu-open .mobile-menu__links a:nth-child(5){animation-delay:.32s}
   .hero--image::before { inset: -120px 0 0 0; filter: blur(11px) saturate(115%); }
   /* Centre the hero CTAs on phones */
   .hero--image .btn-row { justify-content: center; }
+  /* Drop the full-width clouded band around the nav on phones */
+  .nav::before { display: none; }
 }
 
 /* Marquee */
