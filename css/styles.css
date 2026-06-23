@@ -378,6 +378,14 @@ body.menu-open .mobile-menu__links a:nth-child(5){animation-delay:.32s}
   background: linear-gradient(0deg, var(--bg) 0%, rgba(7,10,20,0) 34%);
 }
 .hero--image .hero__inner { position: relative; z-index: 1; }
+/* On phones the wide device-mockup image crops tall and exposes its bezels/
+   fake-nav, so soften it into ambient colour and let the headline lead.
+   (Desktop keeps the sharp image.) Extra side/bottom inset hides blur bleed. */
+@media (max-width: 720px) {
+  .hero--image::before { inset: -120px 0 0 0; filter: blur(11px) saturate(115%); }
+  /* Centre the hero CTAs on phones */
+  .hero--image .btn-row { justify-content: center; }
+}
 
 /* Marquee */
 .marquee { border-block: 1px solid rgba(255,255,255,.08); padding-block: 1.3rem; overflow: hidden; background: rgba(255,255,255,.015); }
