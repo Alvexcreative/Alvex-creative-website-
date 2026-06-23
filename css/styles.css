@@ -387,6 +387,11 @@ body.menu-open .mobile-menu__links a:nth-child(5){animation-delay:.32s}
   .hero--image .btn-row { justify-content: center; }
   /* Drop the full-width clouded band around the nav on phones */
   .nav::before { display: none; }
+  /* Give the nav pill a little breathing room from the screen edges */
+  .nav { padding-inline: 14px; }
+  /* Stats: drop the dark clouded box entirely on phones — the four cards sit
+     on the page background. */
+  .stats-band { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; padding-block: 0; }
 }
 
 /* Marquee */
